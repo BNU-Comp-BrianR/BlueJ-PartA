@@ -67,9 +67,9 @@ public class Student
     /**
      * Return the number of credit points this student has accumulated.
      */
-    public int getCredits()
+    public void addCourse(Course course)
     {
-        return credits;
+        this.course = course;
     }
 
     /**
