@@ -65,21 +65,13 @@ public class Student
 
     
     /**
-     * Add some credit points to the student's accumulated credits.
+     * Return the number of credit points this student has accumulated.
      */
     public void addCourse(Course course)
     {
         this.course = course;
     }
 
-    /**
-     * Return the number of credit points this student has accumulated.
-     */
-    public int getCredits()
-    {
-        return credits;
-    }
-    
     /**
      * Return the login name of this student. The login name is a combination
      * of the first four characters of the student's name and the first three
