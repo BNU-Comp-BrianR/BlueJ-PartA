@@ -141,6 +141,7 @@ public class TicketMachine
             System.out.println("You must insert at least: " +
                                (price - balance) + " more cents.");
                     
+                               
         }
     }
 
