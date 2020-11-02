@@ -13,41 +13,61 @@
  */
 public class TicketMachine
 {
-    // The price of a ticket from this machine.
-    private int price;
     // The amount of money entered by a customer so far.
     private int balance;
     // The total amount of money collected by this machine.
     private int total;
-
+    
+    
+    private Ticket aylesburyTicket;
+    
+    private Ticket amershamTicket;
+    
+    private Ticket highwycombeTicket;
+    
+    private Ticket selectedTicket;
+    
     /**
      * Create a machine that issues tickets of the given price.
      */
-    public TicketMachine(int cost)
+    public TicketMachine()
     {
-        price = cost;
+        
         balance = 0;
         total = 0;
+        selectedTicket = null;
+        createTickets();
     }
 
-    /**
-     * @Return The price of a ticket.
-     */
-    public int getPrice()
+    public void selectamershamTicket()
     {
-        return price;
+        selectedTicket = amershamTicket;
     }
-
-    /**
-     * Return The amount of money already inserted for the
-     * next ticket.
-     */
-    public int getBalance()
+    
+    public void selecthighwycombeTicket()
     {
-        return balance;
+        selectedTicket = highwycombeTicket;
+    }
+    
+    public void selectalesburyTicket()
+    {
+        selectedTicket = aylesburyTicket;
+    }
+    
+    /**
+     * Tickets created for destinations including prices
+     */
+    private void createTickets()
+    {
+        aylesburyTicket = new Ticket ("aylesbury",220);
+        amershamTicket = new Ticket ("amersham",300);
+        highwycombeTicket = new Ticket ("highwycombe",330);
     }
 
-    /**
+
+    
+    
+     /**
      * Receive an amount of money from a customer.
      * Check that the amount is sensible.
      */
@@ -63,14 +83,44 @@ public class TicketMachine
                                amount);
         }
     }
-
-    /**
+    
+    public void insert20p()
+    {
+        balance = balance + 20;
+        System.out.println("You have insterted 20p");
+        printBalance();
+    }
+    
+    public void insert10p()
+    {
+        balance = balance + 10;
+        System.out.println("You have insterted 10p");
+        printBalance();
+    }
+    
+    public void insert100p()
+    {
+        balance = balance + 100;
+        System.out.println("You have insterted 100p");
+        printBalance();
+    }
+    
+    public void insert200p()
+    {
+        balance = balance + 200;
+        System.out.println("You have insterted 200p");
+        printBalance();
+    }
+    
+    
+     /**
      * Print a ticket if enough money has been inserted, and
      * reduce the current balance by the ticket price. Print
      * an error message if more money is required.
      */
     public void printTicket()
     {
+        int price = selectedTicket.getPrice();
         if(balance >= price) 
         {
             // Simulate the printing of a ticket.
@@ -104,5 +154,11 @@ public class TicketMachine
         amountToRefund = balance;
         balance = 0;
         return amountToRefund;
+        
+    }
+    
+    public void printBalance()
+    {
+        System.out.println("current balance = " + balance);
     }
 }

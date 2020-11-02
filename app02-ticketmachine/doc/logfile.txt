@@ -1,0 +1,42 @@
+Class documentation
+<---- javadoc command: ---->
+D:\jdk\bin\javadoc.exe
+-author
+-version
+-nodeprecated
+-package
+-Xdoclint:none
+-noindex
+-notree
+-nohelp
+-nonavbar
+-source
+11
+-classpath
+D:\lib\bluejcore.jar;D:\lib\junit-4.11.jar;D:\lib\hamcrest-core-1.3.jar;D:\lib\lang-stride.jar;D:\lib\javafx\lib\javafx.base.jar;D:\lib\javafx\lib\javafx.controls.jar;D:\lib\javafx\lib\javafx.fxml.jar;D:\lib\javafx\lib\javafx.graphics.jar;D:\lib\javafx\lib\javafx.media.jar;D:\lib\javafx\lib\javafx.properties.jar;D:\lib\javafx\lib\javafx.swing.jar;D:\lib\javafx\lib\javafx.web.jar;C:\Users\Brian\Documents\GitHub\BlueJ-Apps\app02-ticketmachine
+-d
+C:\Users\Brian\Documents\GitHub\BlueJ-Apps\app02-ticketmachine\doc
+-encoding
+UTF-8
+-charset
+UTF-8
+C:\Users\Brian\Documents\GitHub\BlueJ-Apps\app02-ticketmachine\TicketMachine.java
+<---- end of javadoc command ---->
+Loading source file C:\Users\Brian\Documents\GitHub\BlueJ-Apps\app02-ticketmachine\TicketMachine.java...
+Constructing Javadoc information...
+C:\Users\Brian\Documents\GitHub\BlueJ-Apps\app02-ticketmachine\TicketMachine.java:24: error: cannot find symbol
+    private Ticket aylesburyTicket;
+            ^
+  symbol:   class Ticket
+  location: class TicketMachine
+C:\Users\Brian\Documents\GitHub\BlueJ-Apps\app02-ticketmachine\TicketMachine.java:26: error: cannot find symbol
+    private Ticket amershamTicket;
+            ^
+  symbol:   class Ticket
+  location: class TicketMachine
+C:\Users\Brian\Documents\GitHub\BlueJ-Apps\app02-ticketmachine\TicketMachine.java:28: error: cannot find symbol
+    private Ticket highwycombeTicket;
+            ^
+  symbol:   class Ticket
+  location: class TicketMachine
+3 errors
