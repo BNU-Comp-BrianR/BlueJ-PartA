@@ -1,4 +1,5 @@
 #BlueJ package file
+<<<<<<< HEAD
 dependency1.from=TicketMachine
 dependency1.to=Ticket
 dependency1.type=UsesDependency
@@ -18,6 +19,24 @@ package.frame.height=600
 package.frame.width=800
 package.numDependencies=1
 package.numTargets=2
+=======
+editor.fx.0.height=0
+editor.fx.0.width=0
+editor.fx.0.x=0
+editor.fx.0.y=0
+objectbench.height=69
+objectbench.width=760
+package.divider.horizontal=0.599476439790576
+package.divider.vertical=0.848
+package.editor.height=417
+package.editor.width=670
+package.editor.x=557
+package.editor.y=215
+package.frame.height=600
+package.frame.width=800
+package.numDependencies=0
+package.numTargets=0
+>>>>>>> 262c5cf911731ba2afbb663e674e683c6f973c09
 package.showExtends=true
 package.showUses=true
 project.charset=UTF-8
@@ -26,6 +45,7 @@ readme.name=@README
 readme.width=47
 readme.x=10
 readme.y=10
+<<<<<<< HEAD
 target1.height=50
 target1.name=Ticket
 target1.showInterface=false
@@ -40,3 +60,5 @@ target2.type=ClassTarget
 target2.width=120
 target2.x=100
 target2.y=70
+=======
+>>>>>>> 262c5cf911731ba2afbb663e674e683c6f973c09
