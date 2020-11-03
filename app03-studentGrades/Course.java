@@ -12,6 +12,11 @@ public class Course
     private String codeNo;
     private String title;
     
+    private Module module1;
+    private Module module2;
+    private Module module3;
+    private Module module4;
+    
     /**
      * Constructor for objects of class Course
      */
