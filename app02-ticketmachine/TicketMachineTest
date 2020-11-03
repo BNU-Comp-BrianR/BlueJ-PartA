@@ -1,0 +1,87 @@
+TicketMachine ticketMa1 = new TicketMachine();
+ticketMa1.insert100p();
+You have insterted 100p
+current balance = 100
+ticketMa1.insert10p();
+You have insterted 10p
+current balance = 110
+ticketMa1.insert200p();
+You have insterted 200p
+current balance = 310
+ticketMa1.insert20p();
+You have insterted 20p
+current balance = 330
+ticketMa1.selecthighwycombeTicket();
+ticketMa1.printTicket();
+##################
+# The BlueJ Line
+# Ticket
+Ticket: highwycombe Price 330 Tue Nov 03 15:26:59 GMT 2020
+##################
+
+ticketMa1.insert200p();
+You have insterted 200p
+current balance = 200
+ticketMa1.insert100p();
+You have insterted 100p
+current balance = 300
+ticketMa1.selectamershamTicket();
+ticketMa1.printTicket();
+##################
+# The BlueJ Line
+# Ticket
+Ticket: amersham Price 300 Tue Nov 03 15:26:59 GMT 2020
+##################
+
+ticketMa1.selectalesburyTicket();
+ticketMa1.printTicket();
+You must insert at least: 220 more cents.
+ticketMa1.insert200p();
+You have insterted 200p
+current balance = 200
+ticketMa1.insert20p();
+You have insterted 20p
+current balance = 220
+ticketMa1.selectalesburyTicket();
+ticketMa1.printTicket();
+##################
+# The BlueJ Line
+# Ticket
+Ticket: aylesbury Price 220 Tue Nov 03 15:26:59 GMT 2020
+##################
+
+ticketMa1.printBalance();
+current balance = 0
+ticketMa1.insert100p();
+You have insterted 100p
+current balance = 100
+ticketMa1.printBalance();
+current balance = 100
+ticketMa1.insert10p();
+You have insterted 10p
+current balance = 110
+ticketMa1.refundBalance()
+    returned int 110
+ticketMa1.insert200p();
+You have insterted 200p
+current balance = 200
+ticketMa1.insert200p();
+You have insterted 200p
+current balance = 400
+ticketMa1.insert200p();
+You have insterted 200p
+current balance = 600
+ticketMa1.selecthighwycombeTicket();
+ticketMa1.printTicket();
+##################
+# The BlueJ Line
+# Ticket
+Ticket: highwycombe Price 330 Tue Nov 03 15:26:59 GMT 2020
+##################
+
+ticketMa1.printBalance();
+current balance = 270
+ticketMa1.refundBalance()
+    returned int 270
+ticketMa1.printBalance();
+current balance = 0
