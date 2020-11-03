@@ -63,11 +63,8 @@ public class TicketMachine
         amershamTicket = new Ticket ("amersham",300);
         highwycombeTicket = new Ticket ("highwycombe",330);
     }
-
-
-    
-    
-     /**
+     
+    /**
      * Receive an amount of money from a customer.
      * Check that the amount is sensible.
      */
@@ -113,7 +110,7 @@ public class TicketMachine
     }
     
     
-     /**
+    /**
      * Print a ticket if enough money has been inserted, and
      * reduce the current balance by the ticket price. Print
      * an error message if more money is required.
