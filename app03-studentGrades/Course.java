@@ -30,6 +30,9 @@ public class Course
         this.title = title; 
         
         module1 = new Module("Programming Concepts", "CO452");
+        module2 = new Module("Computer Architectures", "CO450");
+        module3 = new Module("Web Development", "CO456");
+        module4 = new Module("Digital Technologies", "CO454");
     }
 
     public void addMark(int mark, int moduleNo)
@@ -37,6 +40,9 @@ public class Course
         if(moduleNo == 1)
         {
             module1.awardMark(mark);
+            module2.awardMark(mark);
+            module3.awardMark(mark);
+            module4.awardMark(mark);
         }
     }
     
@@ -56,6 +62,27 @@ public class Course
             return Grades.F;
         }
         
+        if((mark >= 0) && (mark < 50))
+        {
+            return Grades.D;
+        }
+        
+        if((mark >= 0) && (mark < 60))
+        {
+            return Grades.C;
+        }
+        
+        if((mark >= 0) && (mark < 70))
+        {
+            return Grades.B;
+        }
+        
+        if((mark >= 0) && (mark < 100))
+        {
+            return Grades.A;
+        }
+        
         return Grades.X;
     }
+          
 }
