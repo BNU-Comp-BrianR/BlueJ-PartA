@@ -8,18 +8,29 @@
  */
 public class Course
 {
-    // instance variables - replace the example below with your own
+    //this will make sure the maximum modules are 4
+    public static final int Max_modules = 4;
+    //gives the course name and number as a class
+    private String course;
+    private String courseNumber;    
     private String codeNo;
     private String title;
     
+    //this is the module marking, final mark and grade
+    private int modulesAmount;
+    private int finalCredit;
+    private int finalMark;
+    private int meanMark;
+    private Grades finalGrade;
+    //to see if the course is completed
+    private boolean complete;
+    //4 modules
     private Module module1;
     private Module module2;
     private Module module3;
     private Module module4;
     
-    private int finalMark;
-        
-    private Grades finalGrade;
+       
     /**
      * Constructor for objects of class Course
      */
@@ -62,22 +73,22 @@ public class Course
             return Grades.F;
         }
         
-        if((mark >= 0) && (mark < 50))
+        else if((mark >= 40) && (mark < 50))
         {
             return Grades.D;
         }
         
-        if((mark >= 0) && (mark < 60))
+        else if((mark >= 50) && (mark < 59))
         {
             return Grades.C;
         }
         
-        if((mark >= 0) && (mark < 70))
+        else if((mark >= 60) && (mark < 69))
         {
             return Grades.B;
         }
         
-        if((mark >= 0) && (mark < 100))
+        else if((mark >= 70) && (mark < 100))
         {
             return Grades.A;
         }
