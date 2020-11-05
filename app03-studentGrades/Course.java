@@ -18,7 +18,10 @@ public class Course
     private int noModules;
     private int totalCredits;
     private int totalMark;
-    private int meanMark;    
+    private int meanMark;  
+    private int credits;
+    
+    private Grades finalGrade;
         
     //to see if the course is completed
     private boolean complete;
@@ -42,6 +45,11 @@ public class Course
         totalMark = 0;
         totalCredits = 0;
         complete = false;            
+    }
+    
+    public void createModule()
+    {
+        module1 = new Module("Programming Concepts");
     }
     
     public void addModule(int number, Module module)
@@ -88,7 +96,7 @@ public class Course
             addMark(module3);
             addMark(module4);
             
-            if(totalCredits == MAX_MODULES * Module.CREDITS)
+            if(totalCredits == MAX_MODULES * Module.credits)
             {
                 System.out.println("Your final mark is " + meanMark + 
                                    " your final grade is " + calculatedGrade());
@@ -106,7 +114,7 @@ public class Course
         if(module.isComplete())
         {
             totalMark = totalMark + module.getMark();
-            totalCredits += module.CREDITS;
+            totalCredits += module.credits;
         }
     }
             

@@ -19,7 +19,7 @@ public class Module
     /**
      * Constructor for objects of class Module
      */
-    public Module(String title, String codeNo)
+    public Module(String title, String moduleCode)
     {
         mark = 0;
         this.title = title;

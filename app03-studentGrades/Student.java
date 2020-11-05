@@ -15,8 +15,10 @@ public class Student
     private String id;
     // the amount of credits for study taken so far
     private int credits;
-    
+    //Creating the course per student
     private Course course;
+    //private String course
+    private String courseNumber;
     
     /**
      * Create a new student with a given name and ID number.
@@ -26,6 +28,7 @@ public class Student
         name = fullName;
         id = studentID;
         credits = 0;
+        courseNumber = "G400";
     }
 
     /**
