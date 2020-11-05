@@ -13,6 +13,8 @@ public class Module
     
     private int mark;
     
+    private boolean completed;
+    
 
     /**
      * Constructor for objects of class Module
@@ -22,6 +24,7 @@ public class Module
         mark = 0;
         this.title = title;
         this.codeNo = codeNo;
+        completed = false;
     }
     
     public void awardMark(int mark)
@@ -29,6 +32,7 @@ public class Module
         if((mark >= 0) && (mark <= 100))
         {
             this.mark = mark;
+            if(mark >= 40)completed = true;
         }
         else
         {
@@ -41,4 +45,36 @@ public class Module
         System.out.println("Module: " + codeNo +
         " " + title + " mark ");
     }
+    
+    public String getTitle()
+    {
+        return this.title;
+    }//end method GetTitle
+    
+    public void setTitle(String title)
+    {
+        this.title = title;
+    }//end method setTitle
+    
+    public String getCodeNo()
+    {
+        return this.codeNo;
+    }//end method getCodeNo
+    
+    public int getMark()
+    {
+        return this.mark;
+    }//end method getMark
+    
+    public void setMark(int mark)
+    {
+        this.mark = mark;
+    }//end method setMark
+    
+    public boolean isComplete()
+    {
+        return this.completed;
+    }//end method getCompleted    
+        
+    
 }
