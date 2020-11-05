@@ -50,7 +50,7 @@ public class Module
     {
         return this.title;
     }//end method GetTitle
-    
+        
     public void setTitle(String title)
     {
         this.title = title;

@@ -9,20 +9,17 @@
 public class Course
 {
     //this will make sure the maximum modules are 4
-    public static final int Max_modules = 4;
-    //gives the course name and number as a class
-    private String course;
-    private String courseNumber;    
+    public static final int MAX_MODULES = 4;
+    //gives the course name and number as a class    
     private String codeNo;
     private String title;
     
     //this is the module marking, final mark and grade
-    private int modulesAmount;
-    private int finalCredit;
-    private int finalMark;
-    private int meanMark;
-    
-    private Grades finalGrade;
+    private int noModules;
+    private int totalCredits;
+    private int totalMark;
+    private int meanMark;    
+        
     //to see if the course is completed
     private boolean complete;
     //4 modules
@@ -41,29 +38,22 @@ public class Course
         this.codeNo = codeNo;
         this.title = title;
         //resets the numbers to zero
-        modulesAmount = 0;
-        finalMark = 0;
-        finalCredit = 0;
+        noModules = 0;
+        totalMark = 0;
+        totalCredits = 0;
         complete = false;            
     }
     
-    public void createModules()
+    public void addModule(int number, Module module)
     {
-        //four different types of modules and course numbers
-        module1 = new Module("Programming Concepts", "CO452");
-        module2 = new Module("Computer Architectures", "CO450");
-        module3 = new Module("Web Development", "CO456");
-        module4 = new Module("Digital Technologies", "CO454");
-    }
-    
-    public void addMark(int mark, int moduleNo)
-    {
-        if(moduleNo == 1)
+        if((number >= 1) && (number <= MAX_MODULES)) noModules++;
+        
+        switch (number)
         {
-            module1.awardMark(mark);
-            module2.awardMark(mark);
-            module3.awardMark(mark);
-            module4.awardMark(mark);
+            case 1: module1 = module; break;
+            case 2: module2 = module; break;
+            case 3: module3 = module; break;
+            case 4: module4 = module; break;
         }
     }
     
@@ -74,35 +64,75 @@ public class Course
     {
         // put your code here
         System.out.println("Course " + codeNo + " - " + title);
+        System.out.println();
+        
+        printModules();
     }
     
-    public Grades convertToGrade(int mark)
-    {                  
+    private void printModules()
+    {
+        if(module1 != null) module1.print();
+        if(module2 != null) module2.print();
+        if(module3 != null) module3.print();
+        if(module4 != null) module4.print();       
+    }
+    
+    public void printGrade()
+    {
+        if(noModules == MAX_MODULES)
         {
-        if((mark >= 40) && (mark < 50))
-        
-            return Grades.D;
-                
-        else if((mark >= 50) && (mark < 59))
-        
-            return Grades.C;
-                
-        else if((mark >= 60) && (mark < 69))
-        
-            return Grades.B;
-                
-        else if((mark >= 70) && (mark < 100))
-        
-            return Grades.A;
-        
-        System.out.println("congratulations You've passed with the grade" + mark);
-        
-        if((mark >= 0) && (mark < 39))
-        
-            return Grades.F;   
-            System.out.println("Unfortunatly you failed");
-        return Grades.X;
+            totalMark = 0;
+            
+            addMark(module1);
+            addMark(module2);
+            addMark(module3);
+            addMark(module4);
+            
+            if(totalCredits == MAX_MODULES * Module.CREDITS)
+            {
+                System.out.println("Your final mark is " + meanMark + 
+                                   " your final grade is " + calculatedGrade());
+            }
+            else
+            {
+                System.out.println("You have not completed the course yet!");
+            }
+            
         }
     }
-          
+    
+    private void addMark(Module module)
+    {
+        if(module.isComplete())
+        {
+            totalMark = totalMark + module.getMark();
+            totalCredits += module.CREDITS;
+        }
+    }
+            
+    
+    private String calculatedGrade()
+    {                  
+        meanMark = totalMark / MAX_MODULES;
+        
+        if(meanMark <= 40)
+        {
+            return "F";
+        }
+        else if(meanMark <= 50)
+        {
+            return "D";
+        }
+        else if(meanMark <= 60)
+        {
+            return "C";
+        }
+        else if(meanMark <= 70)
+        {
+           return "B";
+        }
+        else return "A";
+    }
+    
+                                                      
 }
