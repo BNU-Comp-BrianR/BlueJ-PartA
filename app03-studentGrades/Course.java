@@ -21,6 +21,7 @@ public class Course
     private int finalCredit;
     private int finalMark;
     private int meanMark;
+    
     private Grades finalGrade;
     //to see if the course is completed
     private boolean complete;
@@ -38,14 +39,23 @@ public class Course
     {
         // initialise instance variables
         this.codeNo = codeNo;
-        this.title = title; 
-        
+        this.title = title;
+        //resets the numbers to zero
+        modulesAmount = 0;
+        finalMark = 0;
+        finalCredit = 0;
+        complete = false;            
+    }
+    
+    public void createModules()
+    {
+        //four different types of modules and course numbers
         module1 = new Module("Programming Concepts", "CO452");
         module2 = new Module("Computer Architectures", "CO450");
         module3 = new Module("Web Development", "CO456");
         module4 = new Module("Digital Technologies", "CO454");
     }
-
+    
     public void addMark(int mark, int moduleNo)
     {
         if(moduleNo == 1)
@@ -67,33 +77,32 @@ public class Course
     }
     
     public Grades convertToGrade(int mark)
-    {
-        if((mark >= 0) && (mark < 40))
+    {                  
         {
-            return Grades.F;
-        }
+        if((mark >= 40) && (mark < 50))
         
-        else if((mark >= 40) && (mark < 50))
-        {
             return Grades.D;
-        }
-        
+                
         else if((mark >= 50) && (mark < 59))
-        {
+        
             return Grades.C;
-        }
-        
+                
         else if((mark >= 60) && (mark < 69))
-        {
+        
             return Grades.B;
-        }
-        
+                
         else if((mark >= 70) && (mark < 100))
-        {
-            return Grades.A;
-        }
         
+            return Grades.A;
+        
+        System.out.println("congratulations You've passed with the grade" + mark);
+        
+        if((mark >= 0) && (mark < 39))
+        
+            return Grades.F;   
+            System.out.println("Unfortunatly you failed");
         return Grades.X;
+        }
     }
           
 }
