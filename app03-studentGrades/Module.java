@@ -15,13 +15,17 @@ public class Module
     
     private boolean completed;
     
+    private int credit;
+    
 
     /**
      * Constructor for objects of class Module
      */
-    public Module(String title, String moduleCode)
+    public Module(String title, String codeNo)
     {
         mark = 0;
+        credit = 0;
+        
         this.title = title;
         this.codeNo = codeNo;
         completed = false;
@@ -32,12 +36,21 @@ public class Module
         if((mark >= 0) && (mark <= 100))
         {
             this.mark = mark;
-            if(mark >= 40)completed = true;
+            if(mark >= 40)
+            {
+                completed = true;
+                credit = 15;
+            }
         }
         else
         {
             System.out.print("Invalid mark!!!");
         }
+    }
+    
+    public int getCredit()
+    {
+        return credit;
     }
     
     public void print()
@@ -50,12 +63,7 @@ public class Module
     {
         return this.title;
     }//end method GetTitle
-        
-    public void setTitle(String title)
-    {
-        this.title = title;
-    }//end method setTitle
-    
+                
     public String getCodeNo()
     {
         return this.codeNo;
@@ -65,12 +73,7 @@ public class Module
     {
         return this.mark;
     }//end method getMark
-    
-    public void setMark(int mark)
-    {
-        this.mark = mark;
-    }//end method setMark
-    
+        
     public boolean isComplete()
     {
         return this.completed;

@@ -16,10 +16,9 @@ public class Course
     
     //this is the module marking, final mark and grade
     private int noModules;
-    private int totalCredits;
+    private int totalCredit;
     private int totalMark;
     private int meanMark;  
-    private int credits;
     
     private Grades finalGrade;
         
@@ -43,25 +42,43 @@ public class Course
         //resets the numbers to zero
         noModules = 0;
         totalMark = 0;
-        totalCredits = 0;
-        complete = false;            
-    }
-    
-    public void createModule()
-    {
-        module1 = new Module("Programming Concepts");
-    }
-    
-    public void addModule(int number, Module module)
-    {
-        if((number >= 1) && (number <= MAX_MODULES)) noModules++;
+        totalCredit = 0;
+        complete = false; 
         
-        switch (number)
+        createModules();
+    }
+    
+    public void createModules()
+    {
+        module1 = new Module("Programming Concepts", "CO452");
+        module2 = new Module("Digital Technologies", "CO454");
+        module3 = new Module("Web Development", "CO456");
+        module4 = new Module("Computer Architctures", "CO452");
+        
+        noModules = 4;
+    }
+    
+    public void addModule(int moduleNo, Module module)
+    {
+        if((moduleNo >= 1) && (moduleNo <= MAX_MODULES)) noModules++;
+        
+        switch (moduleNo)
         {
             case 1: module1 = module; break;
             case 2: module2 = module; break;
             case 3: module3 = module; break;
             case 4: module4 = module; break;
+        }
+    }
+    
+    public void awardMark(int moduleNo, int mark)
+    {
+        switch(moduleNo)
+        {
+            case 1: module1.awardMark(mark); break;
+            case 2: module2.awardMark(mark); break;
+            case 3: module3.awardMark(mark); break;
+            case 4: module4.awardMark(mark); break;
         }
     }
     
@@ -96,7 +113,9 @@ public class Course
             addMark(module3);
             addMark(module4);
             
-            if(totalCredits == MAX_MODULES * Module.credits)
+            meanMark = totalMark / MAX_MODULES;
+            
+            if(totalCredit == 60)
             {
                 System.out.println("Your final mark is " + meanMark + 
                                    " your final grade is " + calculatedGrade());
@@ -114,14 +133,13 @@ public class Course
         if(module.isComplete())
         {
             totalMark = totalMark + module.getMark();
-            totalCredits += module.credits;
+            totalCredit += module.getCredit();
         }
     }
             
     
     private String calculatedGrade()
-    {                  
-        meanMark = totalMark / MAX_MODULES;
+    {                          
         
         if(meanMark <= 40)
         {
