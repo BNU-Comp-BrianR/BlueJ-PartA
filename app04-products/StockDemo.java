@@ -8,6 +8,8 @@
  */
 public class StockDemo
 {
+    public static final int FIRST_ID = 101;
+    
     // The stock manager.
     private StockManager manager;
 
@@ -18,6 +20,8 @@ public class StockDemo
     public StockDemo(StockManager manager)
     {
         this.manager = manager;
+        
+        int id = FIRST_ID;
         
         manager.addProduct(new Product(101, "Samsung Galaxy S20"));
         manager.addProduct(new Product(102, "Apple iPhone 12"));
@@ -52,14 +56,21 @@ public class StockDemo
      */
     public void runDemo()
     {
-        // Show details of all of the products before delivery.
-        manager.printProduct(101);
+        manager.printAllProducts();
         
-        // Take delivery of 5 items of one of the products.
-        manager.delivery(101, 5);
+        demoDelivery();
+        manager.printAllProducts();
+    }
+    
+    private void demoDelivery()
+    {
+        int amount = 0;
+        for(int id = 101; id <= 112; id++)
+        {
+            manager.deliverProduct(id, amount);
+            amount++;
+        }
         
-        // Show the list of all products after delivery
-        manager.printProduct(101);
     }
     
 }
