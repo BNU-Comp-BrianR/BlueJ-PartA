@@ -1,0 +1,75 @@
+Student student2 = new Student("Brian Ruszkowski", "21717237");
+Course course2 = new Course("Web Development", "G400");
+Module module5 = new Module("Programming Concepts", "CO452");
+Module module6 = new Module("Digital Technologies", "CO454");
+Module module7 = new Module("Web Development", "CO456");
+Module module4 = new Module("Computer Architctures", "CO452");
+module5.getMark()
+    returned int 0
+module6.getMark()
+    returned int 0
+module7.getMark()
+    returned int 0
+module4.getMark()
+    returned int 0
+module5.awardMark(60);
+module6.awardMark(70);
+module7.awardMark(60);
+module4.awardMark(70);
+module5.getTitle()
+    returned String "Programming Concepts"
+module6.getTitle()
+    returned String "Digital Technologies"
+module7.getTitle()
+    returned String "Web Development"
+module4.getTitle()
+    returned String "Computer Architctures"
+module5.print();
+Module: CO452 Programming Concepts mark 
+module6.print();
+Module: CO454 Digital Technologies mark 
+module7.print();
+Module: CO456 Web Development mark 
+module4.print();
+Module: CO452 Computer Architctures mark 
+module5.getMark()
+    returned int 60
+module6.getMark()
+    returned int 70
+module7.getTitle()
+    returned String "Web Development"
+module7.getMark()
+    returned int 60
+module4.getMark()
+    returned int 70
+student2.print();
+Brian Ruszkowski, student ID: 21717237, credits: 0
+student2.getCredits()
+    returned int 0
+student2.addCredits(70);
+course2.printGrade();
+You have not completed the course yet!
+course2.print();
+Course Web Development - G400
+
+Module: CO452 Programming Concepts mark 
+Module: CO454 Digital Technologies mark 
+Module: CO456 Web Development mark 
+Module: CO452 Computer Architctures mark 
+course2.printGrade();
+You have not completed the course yet!
+module6.awardMark(60);
+module6.getCodeNo()
+    returned String "CO454"
+module6.getMark()
+    returned int 60
+module6.isComplete()
+    returned boolean true
+student2.getLoginName()
+    returned String "Bria217"
+student2.getName()
+    returned String "Brian Ruszkowski"
+student2.getStudentID()
+    returned String "21717237"
+course2.printGrade();
+You have not completed the course yet!
