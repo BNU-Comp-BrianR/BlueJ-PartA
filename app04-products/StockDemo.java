@@ -23,8 +23,9 @@ public class StockDemo
         
         int id = FIRST_ID;
         
-        manager.addProduct(new Product(101, "Samsung Galaxy S20"));
-        manager.addProduct(new Product(102, "Apple iPhone 12"));
+        manager.addProduct(new Product(id, "Samsung Galaxy S20"));
+        id++;
+        manager.addProduct(new Product(id, "Apple iPhone 12"));
         manager.addProduct(new Product(103, "Google Pixel 4A"));
         manager.addProduct(new Product(104, "Samsung Galaxy S20"));
         manager.addProduct(new Product(105, "Apple iPhone 12"));

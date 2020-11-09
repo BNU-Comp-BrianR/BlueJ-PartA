@@ -1,0 +1,68 @@
+StockManager StockManager = new StockManager();
+StockDemo stockDem1 = new StockDemo(StockManager);
+stockDem1.getProduct(103)
+    returned Object <object reference>
+StockManager.deliverProduct(103, 5);
+Product Delivered : 103: Google Pixel 4A stock level: 5
+StockManager.sellProduct(103, 2);
+Available stock :5
+103: Google Pixel 4A stock level: 4
+StockManager.removeProduct(103);
+The product has been removed from Stock
+StockManager.printProduct(103);
+stockDem1.runDemo();
+101: Samsung Galaxy S20 stock level: 0
+102: Apple iPhone 12 stock level: 0
+104: Samsung Galaxy S20 stock level: 0
+105: Apple iPhone 12 stock level: 0
+106: Google Pixel 4A stock level: 0
+107: Samsung Galaxy S20 stock level: 0
+108: Apple iPhone 12 stock level: 0
+109: Google Pixel 4A stock level: 0
+110: Samsung Galaxy S20 stock level: 0
+111: Apple iPhone 12 stock level: 0
+112: Google Pixel 4A stock level: 0
+
+Attempt to restock Samsung Galaxy S20 with a non-positive amount: 0
+Product Delivered : 101: Samsung Galaxy S20 stock level: 0
+Product Delivered : 102: Apple iPhone 12 stock level: 1
+Product ID 103 NOT FOUND!!!
+Product Delivered : 104: Samsung Galaxy S20 stock level: 3
+Product Delivered : 105: Apple iPhone 12 stock level: 4
+Product Delivered : 106: Google Pixel 4A stock level: 5
+Product Delivered : 107: Samsung Galaxy S20 stock level: 6
+Product Delivered : 108: Apple iPhone 12 stock level: 7
+Product Delivered : 109: Google Pixel 4A stock level: 8
+Product Delivered : 110: Samsung Galaxy S20 stock level: 9
+Product Delivered : 111: Apple iPhone 12 stock level: 10
+Product Delivered : 112: Google Pixel 4A stock level: 11
+101: Samsung Galaxy S20 stock level: 0
+102: Apple iPhone 12 stock level: 1
+104: Samsung Galaxy S20 stock level: 3
+105: Apple iPhone 12 stock level: 4
+106: Google Pixel 4A stock level: 5
+107: Samsung Galaxy S20 stock level: 6
+108: Apple iPhone 12 stock level: 7
+109: Google Pixel 4A stock level: 8
+110: Samsung Galaxy S20 stock level: 9
+111: Apple iPhone 12 stock level: 10
+112: Google Pixel 4A stock level: 11
+
+StockManager.printProduct(103);
+StockManager.printAllProducts();
+101: Samsung Galaxy S20 stock level: 0
+102: Apple iPhone 12 stock level: 1
+104: Samsung Galaxy S20 stock level: 3
+105: Apple iPhone 12 stock level: 4
+106: Google Pixel 4A stock level: 5
+107: Samsung Galaxy S20 stock level: 6
+108: Apple iPhone 12 stock level: 7
+109: Google Pixel 4A stock level: 8
+110: Samsung Galaxy S20 stock level: 9
+111: Apple iPhone 12 stock level: 10
+112: Google Pixel 4A stock level: 11
+
+StockManager.findProduct(101)
+    returned Object <object reference>
+StockManager.printProduct(101);
+101: Samsung Galaxy S20 stock level: 0
