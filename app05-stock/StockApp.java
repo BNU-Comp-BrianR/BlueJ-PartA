@@ -9,7 +9,7 @@
  */
 public class StockApp
 {
-    public final int FIRST_ID = 200;
+    public final int FIRST_ID = 103;
     // Use to get user input
     private InputReader input;
     
@@ -78,18 +78,27 @@ public class StockApp
         System.out.println("Please enter the name of the product");
         String name = input.getInput();
         
-        Product product = new Product(nextID, name);
-        manager.addProduct(product);
+        boolean isDuplicate = manager.isDuplicateID(nextID);
         
-        System.out.println("\nAdded " + product + " to the stock\n");
-        nextID++;
+        if(isDuplicate)
+        {
+            
+        }
+        else
+        {
+            Product product = new Product(nextID, name);
+            manager.addProduct(product);
+        
+            System.out.println("\nAdded " + product + " to the stock\n");
+            nextID++;
+        }        
     }
     
     public void removeProduct()
     {
         System.out.println("Remove a Product");
         System.out.println();
-        
+            
         System.out.println("Please enter the id of the product");
         String number = input.getInput();
         
