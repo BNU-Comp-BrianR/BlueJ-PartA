@@ -27,6 +27,7 @@ public class Menu
                 System.out.println(" Not a valid choice!");
             }            
         }
+        
         return choice;
     }
     
