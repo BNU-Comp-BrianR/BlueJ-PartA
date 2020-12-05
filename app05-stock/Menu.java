@@ -50,7 +50,7 @@ public class Menu
         
         for(String choice: choices)
         {
-            System.out.println(choices);
+            System.out.println(choice);
         }
     }
 }

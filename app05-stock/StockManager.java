@@ -24,9 +24,19 @@ public class StockManager
      * Add a product to the list.
      * @param item The item to be added.
      */
-    public void addProduct(Product item)
+    public void addProduct(Product newProduct)
     {
-        stock.add(item);
+        Product product = findProduct(newProduct.getID());
+        if(product != null)        
+        {
+            System.out.println("Product Id duplicated " + newProduct.getID());
+        }
+        else
+        {
+            stock.add(newProduct);
+            System.out.println("Product " + newProduct + " Has been added");
+        }
+        
     }
     
     /**

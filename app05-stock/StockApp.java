@@ -9,7 +9,7 @@
  */
 public class StockApp
 {
-    public final int FIRST_ID = 103;
+    public final int FIRST_ID = 113;
     public final String ADD = "add";
     // Use to get user input
     private InputReader input;
@@ -38,7 +38,7 @@ public class StockApp
     {
         menuChoices = new String []
         {
-          "System.out.println",
+          "Add a new product",
           "Remove an old product",
           "Print all products",
           "Quit the program"
@@ -69,7 +69,7 @@ public class StockApp
      */
     public void executeMenuChoice(String choice)
     {
-        if(choice.equals("ADD"))
+        if(choice.equals("add"))
         {
             addProduct();
         }
@@ -77,7 +77,7 @@ public class StockApp
         {
             removeProduct();
         }
-        else if(choice.equals("printall"))
+        else if(choice.equals("print"))
         {
             printAllProducts();
         }
