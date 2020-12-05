@@ -10,6 +10,7 @@
 public class StockApp
 {
     public final int FIRST_ID = 103;
+    public final String ADD = "add";
     // Use to get user input
     private InputReader input;
     
@@ -19,6 +20,8 @@ public class StockApp
     
     private int nextID = FIRST_ID;
     
+    private String [] menuChoices;
+    
     /**
      * Constructor for objects of class StockApp
      */
@@ -27,6 +30,19 @@ public class StockApp
         input = new InputReader();
         manager = new StockManager();
         demo = new StockDemo(manager);
+        
+        setUpMenu();
+    }
+    
+    private void setUpMenu()
+    {
+        menuChoices = new String []
+        {
+          "System.out.println",
+          "Remove an old product",
+          "Print all products",
+          "Quit the program"
+        };
     }
 
     /**
@@ -39,14 +55,11 @@ public class StockApp
         while(!finished)
         {
             printHeading();
-            printMenuChoices();
-           
-            String choice = input.getInput();
-            choice = choice.toLowerCase();
-            
+
+            String choice = Menu.getMenuChoice(menuChoices);
             executeMenuChoice(choice);
             
-            if(choice.equals("quit"))
+            if(choice.startsWith("quit"))
                 finished = true;
         }
     }
@@ -56,7 +69,7 @@ public class StockApp
      */
     public void executeMenuChoice(String choice)
     {
-        if(choice.equals("add"))
+        if(choice.equals("ADD"))
         {
             addProduct();
         }
@@ -82,18 +95,24 @@ public class StockApp
         
         if(isDuplicate)
         {
+            boolean finished = false;
             
-        }
-        else
-        {
-            Product product = new Product(nextID, name);
-            manager.addProduct(product);
+            while(!finished)
+            {
+                nextID++;
+                if(manager.isDuplicateID(nextID))
+                {
+                    finished = true;
+                }
+            }
+        }       
+        Product product = new Product(nextID, name);
+        manager.addProduct(product);
         
-            System.out.println("\nAdded " + product + " to the stock\n");
-            nextID++;
-        }        
-    }
-    
+        System.out.println("\nAdded " + product + " to the stock\n");
+        nextID++;
+    }        
+        
     public void removeProduct()
     {
         System.out.println("Remove a Product");
