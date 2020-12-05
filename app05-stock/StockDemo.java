@@ -9,6 +9,7 @@
 public class StockDemo
 {
     public static final int FIRST_ID = 101;
+    public static final int LAST_ID = 112;
     
     // The stock manager.
     private StockManager manager;
