@@ -26,11 +26,30 @@ public class InputReader
      *
      * @return  A String typed by the user.
      */
-    public String getInput()
+    public String getString(String prompt)
     {
-        System.out.print("> ");         // print prompt
-        String inputLine = reader.nextLine();
-
+        boolean isValid = false;
+        String inputLine = null;
+        
+        while(isValid == false)
+        {
+            System.out.println(prompt + " > ");         // print prompt
+            inputLine = reader.nextLine();
+            if(inputLine.isBlank())
+            {
+                System.out.println("Your imput is blank");
+            }
+            else isValid = true;
+        }
+        
         return inputLine;
+    }
+    
+    public int getInt(String prompt)
+    {
+        System.out.println(prompt + " > ");         // print prompt
+        int number = reader.nextInt();
+
+        return number;
     }
 }

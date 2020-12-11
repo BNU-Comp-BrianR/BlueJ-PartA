@@ -24,176 +24,146 @@ public class StockManager
      * Add a product to the list.
      * @param item The item to be added.
      */
-    public void addProduct(Product newProduct)
+    public void addProduct(Product item)
     {
-        Product product = findProduct(newProduct.getID());
-        if(product != null)        
-        {
-            System.out.println("Product Id duplicated " + newProduct.getID());
-        }
-        else
-        {
-            stock.add(newProduct);
-            System.out.println("Product " + newProduct + " Has been added");
-        }
-        
+        stock.add(item);
     }
     
-    /**
-     * Receive a delivery of a particular product.
-     * Increase the quantity of the product by the given amount.
-     * @param id The ID of the product.
-     * @param amount The amount to increase the quantity by.
-     */
-    public void deliverProduct(int id, int amount)
-    {
-        Product product = findProduct(id);
-        if(product != null)
-        {
-           product.increaseQuantity(amount);
-           System.out.println("Product Delivered : " + product);
-        }
-        else
-        {
-            System.out.println("Product ID "+ id + " NOT FOUND!!!");
-        }
-    }
-    
-    /**
-     * Receive a delivery of a particular product.
-     * Increase the quantity of the product by the given amount.
-     * @param id The ID of the product.
-     * @param amount The amount to increase the quantity by.
-     */
     public void removeProduct(int id)
     {
+        stock.remove(findProduct(id));
+    }
+    
+    public void renameProduct(int id, String name)
+    {
+        findProduct(id).setName(name);
+    }
+    
+    public void showDetails(int id)
+    {
         Product product = findProduct(id);
         
         if(product != null)
-        {
-            System.out.println("\nProduct " + product + " removed!\n");
-            stock.remove(product);           
-        }
-        else
-        {
-            System.out.println("Product ID "+ id + " NOT FOUND!!!");
-        }
-    }
-    
-    /**
-     * Sell one of the given item.
-     * Show the before and after status of the product.
-     * @param id The ID of the product being sold.
-     */
-    public void sellProduct(int id, int quantity)
-    {
-        Product product = findProduct(id);
-        
-        if(product != null) 
-        {
-           System.out.println( "Available stock :" + product.getQuantity());
-           product.sellOne();
-           System.out.println(product);
-        }
-        else
-        {
-            System.out.println( " Product not found");
-        }
-    }
-    
-    /**
-     * Print details of the given product. If found,
-     * its name and stock quantity will be shown.
-     * @param id The ID of the product to look for.
-     */
-    public void printProduct(int id)
-    {
-        Product product = findProduct(id);
-        
-        if(product != null) 
         {
             System.out.println(product.toString());
         }
     }
     
+    public void deliverProduct(int id, int amount)
+    {
+        Product product = findProduct(id);
+        
+        if(product != null)
+        {
+            product.deliver(amount);
+        }
+        else
+        {
+            System.out.println("\nCannot find product with " + id + " id\n");
+        }
+    }
+    
+    public void sellProduct(int id, int quantity)
+    {
+        Product product = findProduct(id);
+        
+        if(product != null)
+        {
+            product.sell(quantity);
+        }
+    }
+    
+    public void reStock(int lowStock,int amount)
+    {
+        for(Product product : stock)
+        {
+            if(product.getQuantity() <= lowStock)
+            {
+                product.addQuantity(amount);
+                System.out.println("\nRe-Stocked " + product.getName()
+                + ". Final quantity in stock: " + product.getQuantity());
+            }
+        }
+    }
+    
     public Product findProduct(int id)
     {
-         for(Product product : stock)
-         {
-            if(product.getID() == id)
-            {
-                return product;
-            }
-         }
-         return null;        
-    }  
-    
-    public boolean isDuplicateID(int id)
-    {
-         for(Product product : stock)
-         {
-            if(product.getID() == id)
-            {
-                return true;
-            }
-         }
-         
-         return false;        
-    }  
-    
-    public Product findByKeword(String productName)
-    {
-        for( Product product : stock)
+        for(Product product : stock)
         {
-            if(product.getName().contains(productName))
-            {
-               return product;
-            }
-            else
-            {
-               System.out.println(" Product not Found!!! ");
-            }
+            if(product.getID() == id) return product;
         }
         return null;
     }
-                               
-    public void changeProductName(int id, String replacement)
+    
+    public boolean isDuplicate(int id)
     {
         Product product = findProduct(id);
-        if(product != null)
-        {
-            changeProductName( id, replacement);
-        }
-        else
-        {
-            System.out.println("Product not found on the database");
-        }
-    }
         
-    /**
-     * Print out each product in the stock
-     * in the order they are in the stock list
-     */
-    //change this.....................
+        if(product == null)
+            return false;
+        else
+            return true;
+    }
+    
+    public boolean blankName(String name)
+    {
+        if(name.isEmpty()) return true;
+        else return false;
+    }
+    
+    public int numberOfProducts()
+    {
+        return stock.size();
+    }
+    
     public void printAllProducts()
     {
-        System.out.println();
-        System.out.println("Peacock's Stock List");
-        System.out.println("====================");
-        System.out.println();
+        printHeading();
         
-        if(stock.size() == 0)
+        for(Product product : stock)
         {
-            System.out.println("Currently you have no stock!");
+            System.out.println(product);
         }
-        else
+    }
+    
+    public void printProductsWithName(String partOfProductName)
+    {
+        System.out.println("\nPrinting searched products:");
+        System.out.println("\nSearch word: " + partOfProductName + "\n");
+        boolean printedAtleastOneName = false;
+        for(Product product : stock)
         {
-            for(Product product : stock)
+            if(product.getName().toLowerCase().contains(partOfProductName))
+            {
+                System.out.println("Product = " + product);
+                printedAtleastOneName = true;
+            }        
+        }
+        if (printedAtleastOneName == false)
+            System.out.println("No products match the search\n");
+    }
+    
+    public void printLowStock(int amount)
+    {
+        System.out.println("\nPrinting low stock products:\n");
+        boolean printedAtleastOneName = false;
+        
+        for(Product product : stock)
+        {
+            if(product.getQuantity() <= amount)
             {
                 System.out.println(product);
-            }    
+                printedAtleastOneName = true;
+                product.addQuantity(amount);
+            }
         }
-
-        System.out.println();
+        if (!printedAtleastOneName)
+            System.out.println("\nNo Products with low stock level\n");
+    }
+    
+    public void printHeading()
+    {
+        System.out.println("\nPrinting Brian's Stock list");
+        System.out.println("\n=====================\n");
     }
 }

@@ -57,19 +57,19 @@ public class StockDemo
         
         while(id <= LAST_ID)
         {
-            Product product = manager.findProduct(id);
-            String name = product.getName().toLowerCase();
-            prefix = prefix.toLowerCase();
-            
-            if(name.contains(prefix))
+            Product product = manager.findProduct(id);                        
+            if(product != null)
             {
-                System.out.println(product);
+                String name = product.getName().toLowerCase();
+                prefix = prefix.toLowerCase();
+                
+                if(name.contains(prefix))
+                {
+                    System.out.println(product);
+                }
+                
+                id ++;
             }
-            else
-            {
-                System.out.println("not found!");
-            }
-            id ++;
         }
     }
     

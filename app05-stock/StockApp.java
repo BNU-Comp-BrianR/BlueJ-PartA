@@ -9,8 +9,20 @@
  */
 public class StockApp
 {
+    
     public final int FIRST_ID = 113;
+    
     public final String ADD = "add";
+    
+    public static final String CLEAR_CODE = "\u000C";
+    
+    public static final char ESC_CODE = 0x1B;
+    
+    public static final String ENTER_ID = "Enter a product ID";
+    
+    public static final String ENTER_NAME = "Enter the product name";
+    
+    public static final String TYPE_CHOICE = "Type your choice";
     // Use to get user input
     private InputReader input;
     
@@ -19,6 +31,8 @@ public class StockApp
     private StockDemo demo;
     
     private int nextID = FIRST_ID;
+    
+    private int lowStockAmount = 2;
     
     private String [] menuChoices;
     
@@ -40,6 +54,9 @@ public class StockApp
         {
           "Add a new product",
           "Remove an old product",
+          "Deliver a quanitiy of product",
+          "Sell a quantity of products",
+          "Search for a product",
           "Print all products",
           "Quit the program"
         };
@@ -50,17 +67,25 @@ public class StockApp
      */
     public void run()
     {
-        boolean finished = false;
+        System.out.println(CLEAR_CODE);
         
+        boolean finished = false;        
         while(!finished)
         {
             printHeading();
-
-            String choice = Menu.getMenuChoice(menuChoices);
-            executeMenuChoice(choice);
+            printMenuChoices();
             
-            if(choice.startsWith("quit"))
+            String choice = input.getString(TYPE_CHOICE);
+            choice = choice.toUpperCase();
+            
+            if(choice.startsWith("QUIT"))
+            {    
                 finished = true;
+            }
+            else
+            {
+                executeMenuChoice(choice);
+            }
         }
     }
         
@@ -69,60 +94,132 @@ public class StockApp
      */
     public void executeMenuChoice(String choice)
     {
-        if(choice.equals("add"))
+        if(choice.equals("ADD"))
         {
             addProduct();
         }
-        else if(choice.equals("remove"))
+        else if(choice.equals("REMOVE"))
         {
             removeProduct();
         }
-        else if(choice.equals("print"))
+        else if(choice.equals("PRINT"))
         {
             printAllProducts();
+        }
+        else if(choice.equals("DELIVER"))
+        {
+            deliverProduct();
+        }
+        else if(choice.equals("SELL"))
+        {
+            sellProduct();
+        }
+        else if(choice.equals("PRINTLOW"))
+        {
+            printLowStock();
+        }
+        else if(choice.equals("SEARCH"))
+        {
+            searchForProduct();
+        }
+        else if(choice.equals("RESTOCK"))
+        {
+            restockProducts();
+        }
+        else
+        {
+            System.out.println("Invalid choice! Please choose from the menu");
         }
     }
     
     public void addProduct()
     {
         System.out.println("Add a new Product");
-        System.out.println();
         
-        System.out.println("Please enter the name of the product");
-        String name = input.getInput();
+        String name = input.getString(ENTER_NAME);
         
-        boolean isDuplicate = manager.isDuplicateID(nextID);
+        int id = input.getInt(ENTER_ID);
         
-        if(isDuplicate)
+        if(manager.isDuplicate(id) || manager.blankName(name))
         {
-            boolean finished = false;
+            System.out.println("Duplicate id or blank name, item not added!");
+        }
+        else
+        {
+            Product product = new Product(id, name);
             
-            while(!finished)
-            {
-                nextID++;
-                if(manager.isDuplicateID(nextID))
-                {
-                    finished = true;
-                }
-            }
-        }       
-        Product product = new Product(nextID, name);
-        manager.addProduct(product);
-        
-        System.out.println("\nAdded " + product + " to the stock\n");
-        nextID++;
+            manager.addProduct(product);
+            
+            System.out.println("\nNew Product added " + product + "\n");
+        }
     }        
         
     public void removeProduct()
     {
         System.out.println("Remove a Product");
-        System.out.println();
-            
-        System.out.println("Please enter the id of the product");
-        String number = input.getInput();
         
-        int id = Integer.parseInt(number);
-        manager.removeProduct(id);                        
+        int id = input.getInt(ENTER_ID);
+        
+        if(manager.isDuplicate(id))
+        {
+            Product product = manager.findProduct(id);
+            System.out.println("\n" + product.getName() + " removed\n");
+            manager.removeProduct(id);
+        }
+        else
+        {
+            System.out.println("No product with that ID!");
+        }       
+    }
+    
+    private void deliverProduct()
+    {
+        System.out.println("\nWaiting for product delivery");
+        
+        int id = input.getInt(ENTER_ID);
+        
+        int amount = input.getInt("Enter delivery amount");
+        
+        manager.deliverProduct(id, amount);
+    }
+    
+    private void sellProduct()
+    {
+        System.out.println("\nSelling a product");
+        
+        int id = input.getInt(ENTER_ID);
+        
+        int amount = input.getInt("How many items to sell?");
+        
+        manager.sellProduct(id, amount);
+    }
+    
+    private void searchForProduct()
+    {
+        System.out.println("\nSearch for a product");
+        
+        String name = input.getString("Enter part of a product's name");
+        name = name.toLowerCase();
+        
+        manager.printProductsWithName(name);
+    }
+    
+    private void restockProducts()
+    {
+        System.out.println("\nPrinting low stock products");
+        
+        int amount = input.getInt("Enter amount to re-stock");
+        
+        manager.printLowStock(amount);
+    }
+    
+    private void printLowStock()
+    {
+        System.out.println("\nPrinting low stock products");
+        
+        lowStockAmount = input.getInt("Enter amount for low stock");
+        
+        manager.printLowStock(lowStockAmount);
     }
     
     /**
@@ -133,6 +230,9 @@ public class StockApp
         System.out.println();
         System.out.println("    Add:        Add a new product");
         System.out.println("    Remove:     Remove an old product");
+        System.out.println("    Deliver:    Deliver a quantity of product");
+        System.out.println("    Sell:       Sell a quantity of products");
+        System.out.println("    Search:     Search for a product");
         System.out.println("    PrintAll:   Print all products");
         System.out.println("    Quit:       Quit the program");
         System.out.println();        

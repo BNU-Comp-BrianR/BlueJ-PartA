@@ -18,7 +18,7 @@ public class Menu
         {
             printChoices(choices);            
            
-            choice = reader.getInput();
+            choice = reader.getString("Please enter your choice");
             choice = choice.toLowerCase();
             
             finished = checkIsValid(choices, choice);      
