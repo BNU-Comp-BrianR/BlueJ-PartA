@@ -1,0 +1,77 @@
+
+******************************
+ Stock Management Application 
+    App05: by Brian Ruszkowski
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of products
+    Restock:    Restock on stock
+    Search:     Search for a product
+    Print:      Print all products
+    Quit:       Quit the program
+
+Type your choice > 
+add
+Add a new Product
+Enter the product name > 
+Bike
+Enter a product ID > 
+113
+
+New Product added 113: Bike stock level: 0
+
+******************************
+ Stock Management Application 
+    App05: by Brian Ruszkowski
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of products
+    Restock:    Restock on stock
+    Search:     Search for a product
+    Print:      Print all products
+    Quit:       Quit the program
+
+Type your choice > 
+Your imput is blank
+Type your choice > 
+print
+
+Printing Brian's Stock list
+
+=====================
+
+101: Samsung Galaxy S20 stock level: 0
+102: Apple iPhone 12 stock level: 0
+103: Google Pixel 4A stock level: 0
+104: Samsung Galaxy S20 stock level: 0
+105: Apple iPhone 12 stock level: 0
+106: Google Pixel 4A stock level: 0
+107: Samsung Galaxy S20 stock level: 0
+108: Apple iPhone 12 stock level: 0
+109: Google Pixel 4A stock level: 0
+110: Samsung Galaxy S20 stock level: 0
+111: Apple iPhone 12 stock level: 0
+112: Google Pixel 4A stock level: 0
+113: Bike stock level: 0
+******************************
+ Stock Management Application 
+    App05: by Brian Ruszkowski
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of products
+    Restock:    Restock on stock
+    Search:     Search for a product
+    Print:      Print all products
+    Quit:       Quit the program
+
+Type your choice > 
+quit

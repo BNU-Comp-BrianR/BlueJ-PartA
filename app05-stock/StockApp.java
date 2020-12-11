@@ -58,6 +58,7 @@ public class StockApp
           "Sell a quantity of products",
           "Restock on stock",
           "Search for a product",
+          "Prints all low stock",
           "Print all products",
           "Quit the program"
         };
@@ -235,6 +236,7 @@ public class StockApp
         System.out.println("    Sell:       Sell a quantity of products");
         System.out.println("    Restock:    Restock on stock"); 
         System.out.println("    Search:     Search for a product");
+        System.out.println("    Printlow:   Prints all low stock");
         System.out.println("    Print:      Print all products");
         System.out.println("    Quit:       Quit the program");
         System.out.println();        
