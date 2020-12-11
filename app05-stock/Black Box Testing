@@ -1,0 +1,199 @@
+Type your choice > 
+deliver
+
+Waiting for product delivery
+Enter a product ID > 
+112
+Enter delivery amount > 
+8
+
+Delivered 8 of Google Pixel 4A. Final quanity in stock: 8
+******************************
+ Stock Management Application 
+    App05: by Brian Ruszkowski
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of products
+    Restock:    Restock on stock
+    Search:     Search for a product
+    Printlow:   Prints all low stock
+    Print:      Print all products
+    Quit:       Quit the program
+
+Type your choice > 
+Your imput is blank
+Type your choice > 
+deliver 
+Invalid choice! Please choose from the menu
+******************************
+ Stock Management Application 
+    App05: by Brian Ruszkowski
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of products
+    Restock:    Restock on stock
+    Search:     Search for a product
+    Printlow:   Prints all low stock
+    Print:      Print all products
+    Quit:       Quit the program
+
+Type your choice > 
+deliver
+
+Waiting for product delivery
+Enter a product ID > 
+112
+Enter delivery amount > 
+-2
+Attempt to restock Google Pixel 4A with a non-positive amount: -2
+******************************
+ Stock Management Application 
+    App05: by Brian Ruszkowski
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of products
+    Restock:    Restock on stock
+    Search:     Search for a product
+    Printlow:   Prints all low stock
+    Print:      Print all products
+    Quit:       Quit the program
+
+Type your choice > 
+Your imput is blank
+Type your choice > 
+sell
+
+Selling a product
+Enter a product ID > 
+112
+How many items to sell? > 
+6
+
+selling 6 of Google Pixel 4A
+
+Sold 6 of Google Pixel 4A. Fianl quantity in stock: 2
+******************************
+ Stock Management Application 
+    App05: by Brian Ruszkowski
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of products
+    Restock:    Restock on stock
+    Search:     Search for a product
+    Printlow:   Prints all low stock
+    Print:      Print all products
+    Quit:       Quit the program
+
+Type your choice > 
+Your imput is blank
+Type your choice > 
+sell
+
+Selling a product
+Enter a product ID > 
+112
+How many items to sell? > 
+-2
+
+Failed to sell -2 of Google Pixel 4A
+
+Negative amount or 0!
+******************************
+ Stock Management Application 
+    App05: by Brian Ruszkowski
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of products
+    Restock:    Restock on stock
+    Search:     Search for a product
+    Printlow:   Prints all low stock
+    Print:      Print all products
+    Quit:       Quit the program
+
+Type your choice > 
+Your imput is blank
+Type your choice > 
+search
+
+Search for a product
+Enter part of a product's name > 
+samsung
+
+Printing searched products:
+
+Search word: samsung
+
+Product = 101: Samsung Galaxy S20 stock level: 0
+Product = 104: Samsung Galaxy S20 stock level: 0
+Product = 107: Samsung Galaxy S20 stock level: 0
+Product = 110: Samsung Galaxy S20 stock level: 0
+******************************
+ Stock Management Application 
+    App05: by Brian Ruszkowski
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of products
+    Restock:    Restock on stock
+    Search:     Search for a product
+    Printlow:   Prints all low stock
+    Print:      Print all products
+    Quit:       Quit the program
+
+Type your choice > 
+printlow
+
+Printing low stock products
+Enter amount for low stock > 
+2
+
+Printing low stock products:
+
+101: Samsung Galaxy S20 stock level: 0
+102: Apple iPhone 12 stock level: 0
+103: Google Pixel 4A stock level: 0
+104: Samsung Galaxy S20 stock level: 0
+105: Apple iPhone 12 stock level: 0
+106: Google Pixel 4A stock level: 0
+107: Samsung Galaxy S20 stock level: 0
+108: Apple iPhone 12 stock level: 0
+109: Google Pixel 4A stock level: 0
+110: Samsung Galaxy S20 stock level: 0
+111: Apple iPhone 12 stock level: 0
+112: Google Pixel 4A stock level: 2
+114: Apple Iphone 12  stock level: 0
+******************************
+ Stock Management Application 
+    App05: by Brian Ruszkowski
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of products
+    Restock:    Restock on stock
+    Search:     Search for a product
+    Printlow:   Prints all low stock
+    Print:      Print all products
+    Quit:       Quit the program
+
+Type your choice > 
+Your imput is blank
+Type your choice > 

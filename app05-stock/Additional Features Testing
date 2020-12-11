@@ -1,0 +1,199 @@
+Type your choice > 
+sell
+
+Selling a product
+Enter a product ID > 
+110
+How many items to sell? > 
+12
+
+selling 12 of Samsung Galaxy S20
+
+Sold 12 of Samsung Galaxy S20. Fianl quantity in stock: 8
+******************************
+ Stock Management Application 
+    App05: by Brian Ruszkowski
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of products
+    Restock:    Restock on stock
+    Search:     Search for a product
+    Printlow:   Prints all low stock
+    Print:      Print all products
+    Quit:       Quit the program
+
+Type your choice > 
+Your imput is blank
+Type your choice > 
+print
+
+Printing Brian's Stock list
+
+=====================
+
+101: Samsung Galaxy S20 stock level: 0
+102: Apple iPhone 12 stock level: 0
+103: Google Pixel 4A stock level: 0
+104: Samsung Galaxy S20 stock level: 0
+105: Apple iPhone 12 stock level: 0
+106: Google Pixel 4A stock level: 0
+107: Samsung Galaxy S20 stock level: 0
+108: Apple iPhone 12 stock level: 0
+109: Google Pixel 4A stock level: 0
+110: Samsung Galaxy S20 stock level: 8
+111: Apple iPhone 12 stock level: 0
+******************************
+ Stock Management Application 
+    App05: by Brian Ruszkowski
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of products
+    Restock:    Restock on stock
+    Search:     Search for a product
+    Printlow:   Prints all low stock
+    Print:      Print all products
+    Quit:       Quit the program
+
+Type your choice > 
+search
+
+Search for a product
+Enter part of a product's name > 
+google
+
+Printing searched products:
+
+Search word: google
+
+Product = 103: Google Pixel 4A stock level: 0
+Product = 106: Google Pixel 4A stock level: 0
+Product = 109: Google Pixel 4A stock level: 0
+******************************
+ Stock Management Application 
+    App05: by Brian Ruszkowski
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of products
+    Restock:    Restock on stock
+    Search:     Search for a product
+    Printlow:   Prints all low stock
+    Print:      Print all products
+    Quit:       Quit the program
+
+Type your choice > 
+printlow
+
+Printing low stock products
+Enter amount for low stock > 
+2
+
+Printing low stock products:
+
+101: Samsung Galaxy S20 stock level: 0
+102: Apple iPhone 12 stock level: 0
+103: Google Pixel 4A stock level: 0
+104: Samsung Galaxy S20 stock level: 0
+105: Apple iPhone 12 stock level: 0
+106: Google Pixel 4A stock level: 0
+107: Samsung Galaxy S20 stock level: 0
+108: Apple iPhone 12 stock level: 0
+109: Google Pixel 4A stock level: 0
+111: Apple iPhone 12 stock level: 0
+******************************
+ Stock Management Application 
+    App05: by Brian Ruszkowski
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of products
+    Restock:    Restock on stock
+    Search:     Search for a product
+    Printlow:   Prints all low stock
+    Print:      Print all products
+    Quit:       Quit the program
+
+Type your choice > 
+Your imput is blank
+Type your choice > 
+restock
+
+Printing low stock products
+Enter amount to re-stock > 
+20
+
+Printing low stock products:
+
+101: Samsung Galaxy S20 stock level: 2
+102: Apple iPhone 12 stock level: 2
+103: Google Pixel 4A stock level: 2
+104: Samsung Galaxy S20 stock level: 2
+105: Apple iPhone 12 stock level: 2
+106: Google Pixel 4A stock level: 2
+107: Samsung Galaxy S20 stock level: 2
+108: Apple iPhone 12 stock level: 2
+109: Google Pixel 4A stock level: 2
+110: Samsung Galaxy S20 stock level: 8
+111: Apple iPhone 12 stock level: 2
+******************************
+ Stock Management Application 
+    App05: by Brian Ruszkowski
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of products
+    Restock:    Restock on stock
+    Search:     Search for a product
+    Printlow:   Prints all low stock
+    Print:      Print all products
+    Quit:       Quit the program
+
+Type your choice > 
+Your imput is blank
+Type your choice > 
+print
+
+Printing Brian's Stock list
+
+=====================
+
+101: Samsung Galaxy S20 stock level: 22
+102: Apple iPhone 12 stock level: 22
+103: Google Pixel 4A stock level: 22
+104: Samsung Galaxy S20 stock level: 22
+105: Apple iPhone 12 stock level: 22
+106: Google Pixel 4A stock level: 22
+107: Samsung Galaxy S20 stock level: 22
+108: Apple iPhone 12 stock level: 22
+109: Google Pixel 4A stock level: 22
+110: Samsung Galaxy S20 stock level: 28
+111: Apple iPhone 12 stock level: 22
+******************************
+ Stock Management Application 
+    App05: by Brian Ruszkowski
+******************************
+
+    Add:        Add a new product
+    Remove:     Remove an old product
+    Deliver:    Deliver a quantity of product
+    Sell:       Sell a quantity of products
+    Restock:    Restock on stock
+    Search:     Search for a product
+    Printlow:   Prints all low stock
+    Print:      Print all products
+    Quit:       Quit the program
+
+Type your choice > 
+quit
