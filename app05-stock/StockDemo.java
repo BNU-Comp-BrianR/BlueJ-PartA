@@ -51,6 +51,28 @@ public class StockDemo
         return product;
     }
     
+    public void search(String prefix)
+    {
+        int id = FIRST_ID;
+        
+        while(id <= LAST_ID)
+        {
+            Product product = manager.findProduct(id);
+            String name = product.getName().toLowerCase();
+            prefix = prefix.toLowerCase();
+            
+            if(name.contains(prefix))
+            {
+                System.out.println(product);
+            }
+            else
+            {
+                System.out.println("not found!");
+            }
+            id ++;
+        }
+    }
+    
     /**
      * Provide a very simple demonstration of how a StockManager
      * might be used. Details of one product are shown, the
