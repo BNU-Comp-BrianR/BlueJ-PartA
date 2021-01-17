@@ -50,7 +50,7 @@ public class Map
 
     public Room getStartRoom()
     {
-        return getStartRoom();
+        return startRoom;
     }
     
 }
