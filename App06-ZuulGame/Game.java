@@ -81,11 +81,7 @@ public class Game
         CommandWord commandWord = command.getCommandWord();
 
         switch (commandWord) 
-        {
-            case UNKNOWN:
-                System.out.println("I don't know what you mean...");
-                break;
-
+        {            
             case HELP:
                 printHelp();
                 break;
@@ -97,6 +93,14 @@ public class Game
             case QUIT:
                 wantToQuit = quit(command);
                 break;
+                            
+            default:
+                throw new IllegalStateException("Unexpected value: " + commandWord);
+                
+            case UNKNOWN:
+                System.out.println("I don't know what you mean...");
+                break;
+
         }
         return wantToQuit;
     }
