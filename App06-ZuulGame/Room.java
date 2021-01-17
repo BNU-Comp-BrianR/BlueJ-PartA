@@ -19,6 +19,8 @@ import java.util.Iterator;
 public class Room 
 {
     private String description;
+    //String is the ket to a room in that direction
+    //east would be an exit that goes to the room
     private HashMap<String, Room> exits;        // stores exits of this room.
 
     /**
