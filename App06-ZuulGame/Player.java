@@ -32,6 +32,9 @@ public class Player
         return score;
     }
     
+    /**
+     * Class to set score
+     */
     public void setScore(int score)
     {
         this.score = score;
@@ -62,21 +65,33 @@ public class Player
         this.count = count;
     }
     
+    /**
+     * Class to set player's health
+     */
     public void setHealth(int health)
     {
         this.health = health;
     }
     
+    /**
+     * Class to get health for the player
+     */
     public int getHealth()
     {
         return health;
     }
     
+    /**
+     * Class to set player's experience
+     */
     public void setExperience(int experience)
     {
         this.experience = experience;
     }
     
+    /**
+     * Class to get experience
+     */
     public int getExperience()
     {
         return experience;
