@@ -8,9 +8,11 @@
 public class Player
 {
     private final String name;
+    private int experience;
+    
     private int score;
     private int count;
-    
+    private int health;
 
     /**
      * the name of the player and the amount of points he starts with
@@ -19,6 +21,7 @@ public class Player
     {
         this.name = name;
         score = 0;
+        health = 100;
     }
     
     /**
