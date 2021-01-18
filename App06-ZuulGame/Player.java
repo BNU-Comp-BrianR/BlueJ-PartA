@@ -32,6 +32,11 @@ public class Player
         return score;
     }
     
+    public void setScore(int score)
+    {
+        this.score = score;
+    }
+    
     /**
      * Class for reseting score if player dies or wants to reset score 
      */
