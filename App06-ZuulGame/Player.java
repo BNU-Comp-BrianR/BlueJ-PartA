@@ -57,6 +57,26 @@ public class Player
         this.count = count;
     }
     
+    public void setHealth(int health)
+    {
+        this.health = health;
+    }
+    
+    public int getHealth()
+    {
+        return health;
+    }
+    
+    public void setExperience(int experience)
+    {
+        this.experience = experience;
+    }
+    
+    public int getExperience()
+    {
+        return experience;
+    }
+    
     /**
      * Class for printing player's name
      */    
