@@ -18,6 +18,8 @@ import java.util.Iterator;
 
 public class Room 
 {
+    private String name;
+    private Items item;
     private String description;
     //String is the ket to a room in that direction
     //east would be an exit that goes to the room
@@ -29,8 +31,9 @@ public class Room
      * "an open court yard".
      * @param description The room's description.
      */
-    public Room(String description) 
+    public Room(Items item, String description) 
     {
+        this.item = item;
         this.description = description;
         exits = new HashMap<>();
     }
@@ -91,6 +94,16 @@ public class Room
     public Room getExit(String direction) 
     {
         return exits.get(direction);
+    }
+    
+    public void setDescription(String description)
+    {
+        this.description = description;
+    }
+    
+    public void setItem(Items item)
+    {
+        this.item = item;
     }
 }
 
